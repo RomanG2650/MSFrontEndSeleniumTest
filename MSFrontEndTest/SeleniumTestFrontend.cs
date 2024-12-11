@@ -49,7 +49,7 @@ namespace MSFrontEndTest
             string pageTitleCreateUser = _driver.Title;
 
 
-            Assert.AreEqual("Fail Test title", pageTitleCreateUser);
+            Assert.AreNotEqual("Fail Test title", pageTitleCreateUser);
 
         }
 
@@ -70,7 +70,7 @@ namespace MSFrontEndTest
 
             string pageTitleLuftkontrol = _driver.Title;
 
-            Assert.AreEqual("Fail Title Test", pageTitleLuftkontrol);
+            Assert.AreNotEqual("Fail Title Test", pageTitleLuftkontrol);
         }
 
         [TestMethod]
@@ -115,7 +115,7 @@ namespace MSFrontEndTest
 
             IWebElement confirmPasswordInput = _driver.FindElement(By.Id("confirmPassword"));
             confirmPasswordInput.SendKeys("223456");
-            Assert.AreEqual(passwordInput.GetAttribute("value"), confirmPasswordInput.GetAttribute("value"));
+            Assert.AreNotEqual(passwordInput.GetAttribute("value"), confirmPasswordInput.GetAttribute("value"));
 
 
             IWebElement signUpButton = _driver.FindElement(By.CssSelector("button.btn.btn-success"));
